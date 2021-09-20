@@ -15,6 +15,10 @@ public class Dice {
         minValue = 1;
     }
     
+    /**
+     * Produce un numero random entre los limites establecidos
+     * @return un numero random
+     */
     public int getRollResult(){
         Random dice = new Random();
         int roll = dice.nextInt((maxValue - minValue) + 1) + minValue;
