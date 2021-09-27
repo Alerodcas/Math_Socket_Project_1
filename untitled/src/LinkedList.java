@@ -12,12 +12,6 @@ public class LinkedList implements Serializable {
     public int maxsize=16;
     
     /**
-     * Metodo principal
-     * @param args 
-     */
-    
-    
-    /**
      * Metodo constructor
      */
     public LinkedList(){
@@ -48,7 +42,8 @@ public class LinkedList implements Serializable {
     }
     
     /**
-     * Crea una lista enlazada donde el orden de las casillas es aleatoria
+     * Anade de forma aleatoria tipos distintos de nodos a la lista enlazada
+     * @param lista lista vacia a la que se le anaden los nodos
      */
     public void add_randomly(LinkedList lista){
         int max_challenge = maxsize/2;

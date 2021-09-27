@@ -1,4 +1,5 @@
 
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,13 +13,7 @@ public class LinkedList implements java.io.Serializable {
     public int maxsize=16;
     
     /**
-     * Metodo principal
-     * @param args 
-     */
-    
-    
-    /**
-     * Metodo constructor
+     * Metodo constructor de la clase
      */
     public LinkedList(){
         head = null;
@@ -28,7 +23,7 @@ public class LinkedList implements java.io.Serializable {
     
     /**
      * Crea y anade un nodo a la lista
-     * @param data 
+     * @param data tipo casilla que va a ser el nodo
      */
     public void add(String data) {
         DoubleNode newNode = new DoubleNode(data);
@@ -48,7 +43,8 @@ public class LinkedList implements java.io.Serializable {
     }
     
     /**
-     * Crea una lista enlazada donde el orden de las casillas es aleatoria
+     * Anade de forma aleatoria tipos distintos de nodos a la lista enlazada
+     * @param lista lista vacia a la que se le anaden los nodos
      */
     public void add_randomly(LinkedList lista){
         int max_challenge = maxsize/2;

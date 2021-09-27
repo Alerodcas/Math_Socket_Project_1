@@ -1,29 +1,37 @@
 
+
 import java.util.*;
 
 public class Game {
     private DoubleNode finalPos;
     private boolean state;
     private List<Player> players;
-    private Player lastPlayer;//nuevo
-    private Player playingPlayer;//nuevo
-    private Player tmp;//nuevo
+    private Player lastPlayer;
+    private Player playingPlayer;
+    private Player tmp;
     
     
-
-    public Game(Player player1, Player player2, LinkedList tablero){//nuevo
+    /**
+     * Metodo constructor
+     * @param player1 jugador 1
+     * @param player2 jugador 2
+     * @param tablero lista enlazada del tablero
+     */
+    public Game(Player player1, Player player2, LinkedList tablero){
         finalPos = tablero.tail;
         state = true;
-        playingPlayer = player1;//nuevo
-        lastPlayer = player2;//nuevo
+        playingPlayer = player1;
+        lastPlayer = player2;
         players = new ArrayList<Player>();
         players.add(player1);
         players.add(player2);
         
     }
     
-    
-    public void Play(){//todo esto va en lugar de newGame
+    /**
+     * Metodo para jugar un turno
+     */
+    public void Play(){
         Dice dice = new Dice();
         int move = dice.getRollResult();
         for (int i=0;i<move;i++){
@@ -36,7 +44,10 @@ public class Game {
         lastPlayer = tmp;
     }
     
-    public void checkBoxType(){//Se cambio mucho
+    /**
+     * Metodo que revisa el tipo de casilla del jugador y llama o hace la funcion correspondiente
+     */
+    public void checkBoxType(){
         if(playingPlayer.currentPosition.getType()=="challenge"){
             Challenge_box.generate_problem();
             lastPlayer.setCurrentPosition(lastPlayer.getCurrentPosition().getNext());
@@ -54,12 +65,20 @@ public class Game {
         }
     }
     
+    /**
+     * Metodo que genera el numero random de casillas que va a avanzar/retroceder el jugador
+     * @return numero random entre 1 y 3
+     */
     static int generate_random(){
         int max=3,min=1;
         int random_int = (int)Math.floor(Math.random()*(max-min+1)+min);
         return random_int;
     }
     
+    /**
+     * Verifica si el jugador alcanza la ultima casilla o la pasa
+     * @param player ultimo jugador que se movio
+     */
     public void checkWin(Player player){
         if(player.getCurrentPosition() == finalPos || player.getCurrentPosition()== null){
             state = false;

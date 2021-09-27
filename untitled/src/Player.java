@@ -1,11 +1,6 @@
 
-/**
- *
- * @author alero
- */
 public class Player implements java.io.Serializable{
     public DoubleNode currentPosition;
-    public DoubleNode startPosition;
    
     /**
      * Metodo constructor
@@ -13,7 +8,6 @@ public class Player implements java.io.Serializable{
      */
     public Player(DoubleNode pos){
         currentPosition = pos;
-        startPosition = pos;
 }
     /**
      * @return posicion actual del jugador
@@ -24,7 +18,7 @@ public class Player implements java.io.Serializable{
     
     /**
      * Asigna la posicion actual del jugador
-     * @param pos 
+     * @param pos nueva posicion
      */
     public void setCurrentPosition(DoubleNode pos){
         currentPosition = pos;
