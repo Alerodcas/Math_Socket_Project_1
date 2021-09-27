@@ -11,6 +11,12 @@ public class Game {
     
     
 
+     /**
+     * Metodo constructor
+     * @param player1 jugador 1
+     * @param player2 jugador 2
+     * @param tablero lista enlazada del tablero
+     */
     public Game(Player player1, Player player2, LinkedList tablero){//nuevo
         finalPos = tablero.tail;
         state = true;
@@ -22,7 +28,9 @@ public class Game {
         
     }
     
-    
+    /**
+     * Metodo para jugar un turno
+     */
     public void Play(){//todo esto va en lugar de newGame
         Dice dice = new Dice();
         int move = dice.getRollResult();
@@ -36,6 +44,9 @@ public class Game {
         lastPlayer = tmp;
     }
     
+    /**
+     * Metodo que revisa el tipo de casilla del jugador y llama o hace la funcion correspondiente
+     */
     public void checkBoxType(){//Se cambio mucho
         if(playingPlayer.currentPosition.getType()=="challenge"){
             Challenge_box.generate_problem();
@@ -54,12 +65,20 @@ public class Game {
         }
     }
     
+    /**
+     * Metodo que genera el numero random de casillas que va a avanzar/retroceder el jugador
+     * @return numero random entre 1 y 3
+     */
     static int generate_random(){
         int max=3,min=1;
         int random_int = (int)Math.floor(Math.random()*(max-min+1)+min);
         return random_int;
     }
     
+    /**
+     * Verifica si el jugador alcanza la ultima casilla o la pasa
+     * @param player ultimo jugador que se movio
+     */
     public void checkWin(Player player){
         if(player.getCurrentPosition() == finalPos || player.getCurrentPosition()== null){
             state = false;
