@@ -92,6 +92,9 @@ public class gui extends JPanel {
     private JButton button3;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 
+    /**
+     * Asigna el nombre del jugador
+     */
     public class set_name implements ActionListener{
 
         @Override
@@ -100,6 +103,9 @@ public class gui extends JPanel {
         }
     }
 
+    /**
+     * Asigna el puerto a unirse
+     */
     public class set_port implements ActionListener {
 
         @Override
@@ -109,6 +115,10 @@ public class gui extends JPanel {
             new_game.setVisible(true);
         }
     }
+
+    /**
+     * Asigna el puerto que se unirán los jugadores
+     */
     public class set_host implements ActionListener{
 
         @Override
