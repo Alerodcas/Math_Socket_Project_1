@@ -1,3 +1,4 @@
+package untitled.src;
 
 public class Player implements java.io.Serializable{
     public DoubleNode currentPosition;

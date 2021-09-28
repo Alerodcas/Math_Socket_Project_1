@@ -1,5 +1,6 @@
+package untitled.src;
+
 import javax.swing.*;
-import java.awt.*;
 
 public class gameWindow extends JFrame{
     public gameWindow(){

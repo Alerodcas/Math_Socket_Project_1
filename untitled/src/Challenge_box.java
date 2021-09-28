@@ -1,7 +1,6 @@
-
+package untitled.src;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class Challenge_box {
     private static int x,y;

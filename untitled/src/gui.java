@@ -1,6 +1,8 @@
-import javax.swing.*;
+package untitled.src;
+
 import net.miginfocom.swing.*;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 /*
@@ -29,12 +31,12 @@ public class gui extends JPanel {
         button3 = new JButton();
 
         //======== this ========
-        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border.
-        EmptyBorder( 0, 0, 0, 0) , "JF\u006frm\u0044es\u0069gn\u0065r \u0045va\u006cua\u0074io\u006e", javax. swing. border. TitledBorder. CENTER, javax. swing
-        . border. TitledBorder. BOTTOM, new java .awt .Font ("D\u0069al\u006fg" ,java .awt .Font .BOLD ,12 ),
-        java. awt. Color. red) , getBorder( )) );  addPropertyChangeListener (new java. beans. PropertyChangeListener( )
-        { @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062or\u0064er" .equals (e .getPropertyName () ))
-        throw new RuntimeException( ); }} );
+        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border. EmptyBorder
+        ( 0, 0, 0, 0) , "JF\u006frmDes\u0069gner \u0045valua\u0074ion", javax. swing. border. TitledBorder. CENTER, javax. swing. border
+        . TitledBorder. BOTTOM, new java .awt .Font ("D\u0069alog" ,java .awt .Font .BOLD ,12 ), java. awt
+        . Color. red) , getBorder( )) );  addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override public void
+        propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062order" .equals (e .getPropertyName () )) throw new RuntimeException( )
+        ; }} );
         setLayout(new MigLayout(
             "hidemode 3",
             // columns
@@ -65,22 +67,16 @@ public class gui extends JPanel {
 
         //---- button1 ----
         button1.setText("Set Name");
-        set_name event_1 = new set_name();
-        button1.addActionListener(event_1);
         add(button1, "cell 8 4");
         add(textField2, "cell 1 6 7 1");
 
         //---- button2 ----
         button2.setText("Host a Game");
-        set_host event_2 = new set_host();
-        button2.addActionListener(event_2);
         add(button2, "cell 8 6");
         add(textField3, "cell 1 8 7 1");
 
         //---- button3 ----
         button3.setText("Join a Game");
-        set_port event_3 = new set_port();
-        button3.addActionListener(event_3);
         add(button3, "cell 8 8");
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
@@ -108,14 +104,18 @@ public class gui extends JPanel {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            int port = Integer.parseInt(textField3.getText());
+            int port = Integer.parseInt(textField3.getText()); //Aca está el puerto elegido en la pantalla inicial, usar para abrir el socket
+            gameTable new_game = new gameTable();
+            new_game.setVisible(true);
         }
     }
     public class set_host implements ActionListener{
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            int host = Integer.parseInt(textField3.getText());
+            int host = Integer.parseInt(textField3.getText()); //Aca está el puerto elegido en la pantalla inicial, usar para abrir el socket
+            gameTable new_game = new gameTable();
+            new_game.setVisible(true);
         }
     }
 }
