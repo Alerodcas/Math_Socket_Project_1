@@ -5,6 +5,7 @@
  */
 package com.mycompany.proyecto.Math_Socket_Project_1;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -70,8 +71,10 @@ public class ActionListenerTablero implements ActionListener {
      * Metodo que dibuja los jugadores en el tablero
      **/
     public void paintPlayer(Graphics g) {
+        g.setColor(Color.red);
         g.fillOval(this.GAME.player1.getX(), this.GAME.player1.getY(), 50, 50);
         g.fillOval(this.GAME.player2.getX(), this.GAME.player2.getY(), 50, 50);
+
     }
 
 }

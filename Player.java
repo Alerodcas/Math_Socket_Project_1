@@ -5,7 +5,7 @@ public class Player implements java.io.Serializable {
     public DoubleNode currentPosition;
     public int x;
     public int y;
-    private int move = -100;
+    private int move = 50;
 
     /**
      * Metodo constructor
@@ -70,9 +70,9 @@ public class Player implements java.io.Serializable {
      * mueve al jugador en un trablero 4x4
      */
     public void movePlace() {
-        if (this.x + move < 100 || this.x + move > 450) {
+        if (this.x + move > 250 || this.x + move < 100) {
             setY(this.getY() + 50);
-            this.move = -this.move;
+            this.move *= -1;
         } else {
             setX(this.x + move);
         }
