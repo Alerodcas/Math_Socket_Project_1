@@ -1,3 +1,5 @@
+package com.mycompany.proyecto.Math_Socket_Project_1;
+
 
 
 import java.util.*;
@@ -5,38 +7,39 @@ import java.util.*;
 public class Game {
     private DoubleNode finalPos;
     private boolean state;
-    private List<Player> players;
-    private Player lastPlayer;
-    private Player playingPlayer;
+    public Player lastPlayer;
+    public Player playingPlayer;
+    public Player player1;
+    public Player player2;
     private Player tmp;
     
     
     /**
      * Metodo constructor
-     * @param player1 jugador 1
-     * @param player2 jugador 2
-     * @param tablero lista enlazada del tablero
      */
-    public Game(Player player1, Player player2, LinkedList tablero){
-        finalPos = tablero.tail;
-        state = true;
-        playingPlayer = player1;
-        lastPlayer = player2;
-        players = new ArrayList<Player>();
-        players.add(player1);
-        players.add(player2);
+    public Game(){
+        LinkedList tablero = new LinkedList();
+        tablero.add_randomly(tablero);
+        Player player1 = new Player(tablero.head, 100,100);
+        Player player2 = new Player(tablero.head, 100,100);
+        this.finalPos = tablero.tail;
+        this.state = true;
+        this.player1 = player1;
+        this.player2 = player2;
+        this.playingPlayer = player1;
+        this.lastPlayer = player2;
+
         
     }
     
     /**
-     * Metodo para jugar un turno
+     * Mueve al jugador en el tablero
+     * @param move cantidad de espacios que se mueve el jugador
      */
-    public void Play(){
-        Dice dice = new Dice();
-        int move = dice.getRollResult();
+    public void Play(int move){
         for (int i=0;i<move;i++){
             playingPlayer.setCurrentPosition(playingPlayer.getCurrentPosition().getNext());
-        }
+        }playingPlayer.movePlayer(move);
         checkBoxType();
         checkWin(playingPlayer);
         tmp = playingPlayer;
