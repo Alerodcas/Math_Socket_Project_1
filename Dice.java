@@ -1,3 +1,5 @@
+package com.mycompany.proyecto.Math_Socket_Project_1;
+
 
 import java.util.Random;
 
