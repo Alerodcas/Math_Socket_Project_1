@@ -14,7 +14,7 @@ import java.awt.event.ActionListener;
 public class GUIPrincipal extends javax.swing.JFrame {
 
     /**
-     * Metodo construcots
+     * Metodo constructor
      */
     public GUIPrincipal() {
         initComponents();
@@ -47,10 +47,10 @@ public class GUIPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnHost.setText("Host Game");
-        getContentPane().add(btnHost, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 182, -1, -1));
+        getContentPane().add(btnHost, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 100, 40));
 
         btnJoin.setText("Join Game");
-        getContentPane().add(btnJoin, new org.netbeans.lib.awtextra.AbsoluteConstraints(228, 182, -1, -1));
+        getContentPane().add(btnJoin, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 90, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

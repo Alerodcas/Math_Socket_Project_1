@@ -20,6 +20,26 @@ public class Server {
 
     }
     
+    public void sendGame(Game game) throws IOException{
+        ServerSocket ss = new ServerSocket(8888);
+        Socket socket = ss.accept();
+        OutputStream outputStream = socket.getOutputStream();
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
+        
+        objectOutputStream.writeObject(game);
+    }
+    
+    public Game receiveGame() throws IOException, ClassNotFoundException{
+        ServerSocket ss = new ServerSocket(9999);
+        Socket socket = ss.accept();
+        InputStream inputStream = socket.getInputStream();
+        ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
+        
+        Game game = (Game) objectInputStream.readObject();
+        return game;
+        
+    }
+   
     /**
      * Envia un tablero al cliente
      */

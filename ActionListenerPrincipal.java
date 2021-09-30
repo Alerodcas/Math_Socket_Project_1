@@ -17,18 +17,18 @@ import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
  * @author alero
  */
 public class ActionListenerPrincipal implements ActionListener {
-    
+
     private GUIPrincipal guiPrincipal;
     private GUITablero panelTablero;
 
-
-    public ActionListenerPrincipal(GUIPrincipal  guiPrincipal) {
+    public ActionListenerPrincipal(GUIPrincipal guiPrincipal) {
         this.guiPrincipal = guiPrincipal;
         this.panelTablero = new GUITablero();
     }
-    
+
     /**
-     * Metodo que ejecuta las accioens al presionarse un boton especifico
+     * Metodo que ejecuta las acciones al presionarse un boton especifico
+     *
      * @param e evento
      */
     @Override
@@ -56,9 +56,10 @@ public class ActionListenerPrincipal implements ActionListener {
                     } catch (IOException ex) {
                         Logger.getLogger(ActionListenerPrincipal.class.getName()).log(Level.SEVERE, null, ex);
                     } catch (ClassNotFoundException ex) {
-                         Logger.getLogger(ActionListenerPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-                     }
+                        Logger.getLogger(ActionListenerPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                     panelTablero.setVisible(true);
+                    panelTablero.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
                     break;
 
