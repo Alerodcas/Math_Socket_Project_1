@@ -40,8 +40,8 @@ public class Game {
         for (int i=0;i<move;i++){
             playingPlayer.setCurrentPosition(playingPlayer.getCurrentPosition().getNext());
         }playingPlayer.movePlayer(move);
-        checkBoxType();
         checkWin(playingPlayer);
+        checkBoxType();
         tmp = playingPlayer;
         playingPlayer = lastPlayer;
         lastPlayer = tmp;
@@ -59,12 +59,12 @@ public class Game {
             int move = generate_random();
                 for(int i=0; i<move;i++){
                     playingPlayer.setCurrentPosition(playingPlayer.getCurrentPosition().getNext());
-                }
+                }System.out.println("El jugador ha caido en una casilla de tunel y avanza "+move+" espacios");
         }if(playingPlayer.currentPosition.getType()=="trampa"){
             int move = generate_random();
                 for(int i=0; i<move;i++){
                     playingPlayer.setCurrentPosition(playingPlayer.getCurrentPosition().getPrev());
-                }
+                }System.out.println("El jugador ha caido en una casilla de trampa y retrocede "+move+" espacios");
         }
     }
     

@@ -76,7 +76,6 @@ public class LinkedList implements java.io.Serializable {
                 tunel++;
             }
         }lista.show();
-        System.out.println(lista.size);
     }
     
     /**

@@ -29,27 +29,32 @@ public class Challenge_box {
     }
 
     /**
-     * Genera el problema matematico de forma random
+     * Genera el problema matematico de forma random y abre la ventana del problema
      */
     public static void generate_problem() {
         x = Challenge_box.generate_random();
         y = Challenge_box.generate_random();
         char simb = Challenge_box.generate_random_c();
+        GUIPregunta guiPregunta = new GUIPregunta();
         if (simb == '+') {
-            System.out.println(x + " + " + y + " = ?");
-            resp = x + y;
+            System.out.println("suma");
+            guiPregunta.setPregunta(x + " + " + y + " = ?");
+            guiPregunta.setVisible(true);
         }
         if (simb == '-') {
-            System.out.println(x + " - " + y + " = ?");
-            resp = x - y;
+            System.out.println("resta");
+            guiPregunta.setPregunta(x + " - " + y + " = ?");
+            guiPregunta.setVisible(true);
         }
         if (simb == '*') {
-            System.out.println(x + " x " + y + " = ?");
-            resp = x * y;
+            System.out.println("mult");
+            guiPregunta.setPregunta(x + " x " + y + " = ?");
+            guiPregunta.setVisible(true);
         }
         if (simb == '/') {
-            System.out.println(x + " / " + y + " = ?");
-            resp = x / y;
+            System.out.println("div");
+            guiPregunta.setPregunta(x + " / " + y + " = ?");
+            guiPregunta.setVisible(true);
         }
     }
 
